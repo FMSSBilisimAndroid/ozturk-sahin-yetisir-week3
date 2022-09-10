@@ -1,11 +1,8 @@
 package com.ozturksahinyetisir.week3v1
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.PackageManagerCompat.LOG_TAG
 import com.ozturksahinyetisir.week3v1.databinding.ActivityMainBinding
-
 
 private lateinit var binding: ActivityMainBinding
 
@@ -17,7 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        /**
+         * @param count every click add plus 1 and get on screen.
+         */
         binding.clickButton.setOnClickListener() {
             count++
             binding.textView1.text = count.toString()
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
      */
     override fun onSaveInstanceState(outState: Bundle) {
        super.onSaveInstanceState(outState)
-      outState.putInt("savedInt", count)
+       outState.putInt("savedInt", count)
 
     }
 

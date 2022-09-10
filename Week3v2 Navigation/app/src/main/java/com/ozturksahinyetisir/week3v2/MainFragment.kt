@@ -22,10 +22,16 @@ class MainFragment : Fragment() {
         var getName = preferences.getString("name","")
         binding.welcometext.text = getName.toString()
         binding.secondPageButton.setOnClickListener{
+            /**
+             * Navigate mainFragment to secondFragment with setOnClickListener "secondPageButton"
+             */
             findNavController().navigate(R.id.action_mainFragment_to_secondFragment)
         }
         return binding.root
     }
+    /**
+     * exit function uses exitProcess at kotlin.system
+     */
     fun exit(view: View){
         exitProcess(0)
     }

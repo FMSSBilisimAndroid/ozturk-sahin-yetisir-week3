@@ -17,12 +17,20 @@ class SecondFragment : Fragment() {
     ): View? {
         binding = FragmentSecondBinding.inflate(inflater)
 
+        /**
+        * Navigate secondFragment to mainFragment with setOnClickListener "mainPageButton"
+        */
+
         binding.mainPageButton.setOnClickListener{
             findNavController().navigate(R.id.action_secondFragment_to_mainFragment)
         }
 
         return binding.root
     }
+
+    /**
+     * exit function uses exitProcess at kotlin.system
+     */
     fun exit(view: View){
         exitProcess(0)
     }
