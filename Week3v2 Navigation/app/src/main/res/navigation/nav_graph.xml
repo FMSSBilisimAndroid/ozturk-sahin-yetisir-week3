@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ozturksahinyetisir.week3v2.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/navigation"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/mainFragment">
+        <fragment
+            android:id="@+id/secondFragment"
+            android:name="com.ozturksahinyetisir.week3v2.SecondFragment"
+            android:label="fragment_second"
+            tools:layout="@layout/fragment_second" >
+            <action
+                android:id="@+id/action_secondFragment_to_mainFragment"
+                app:destination="@id/mainFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/mainFragment"
+            android:name="com.ozturksahinyetisir.week3v2.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_main">
+            <action
+                android:id="@+id/action_mainFragment_to_secondFragment"
+                app:destination="@id/secondFragment" />
+        </fragment>
+    </navigation>
+</navigation>
